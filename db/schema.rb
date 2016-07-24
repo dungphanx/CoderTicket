@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160723202434) do
+ActiveRecord::Schema.define(version: 20160724185450) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,6 +38,32 @@ ActiveRecord::Schema.define(version: 20160723202434) do
 
   add_index "events", ["category_id"], name: "index_events_on_category_id", using: :btree
   add_index "events", ["venue_id"], name: "index_events_on_venue_id", using: :btree
+
+  create_table "order_details", force: :cascade do |t|
+    t.integer  "quantity"
+    t.decimal  "price"
+    t.decimal  "total_price"
+    t.integer  "order_id"
+    t.integer  "ticket_type_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  add_index "order_details", ["order_id"], name: "index_order_details_on_order_id", using: :btree
+  add_index "order_details", ["ticket_type_id"], name: "index_order_details_on_ticket_type_id", using: :btree
+
+  create_table "orders", force: :cascade do |t|
+    t.string   "name"
+    t.string   "address"
+    t.string   "email"
+    t.string   "phone"
+    t.integer  "event_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.decimal  "price"
+  end
+
+  add_index "orders", ["event_id"], name: "index_orders_on_event_id", using: :btree
 
   create_table "regions", force: :cascade do |t|
     t.string   "name"
@@ -76,6 +102,9 @@ ActiveRecord::Schema.define(version: 20160723202434) do
 
   add_foreign_key "events", "categories"
   add_foreign_key "events", "venues"
+  add_foreign_key "order_details", "orders"
+  add_foreign_key "order_details", "ticket_types"
+  add_foreign_key "orders", "events"
   add_foreign_key "ticket_types", "events"
   add_foreign_key "venues", "regions"
 end

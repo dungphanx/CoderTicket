@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   resources :events do
     resources :tickets
+    resources :orders
   end
   resources :venues, only: [:new, :create]
   resources :sessions, only: [:new, :create]
