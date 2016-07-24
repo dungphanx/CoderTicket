@@ -1,10 +1,10 @@
-# Homework 3 - *Name of App*
+# Homework 3 - *Coder Ticket*
 
 **Name of your app** is a Ruby on Rails blog application that allows users to create and buy tickets to cool events. 
 
-Submitted by: **Your Name Here**
+Submitted by: **Dung Phan**
 
-Time spent: **X** hours
+Time spent: **20+** hours
 
 URL: **Insert your Heroku URL here**
 
