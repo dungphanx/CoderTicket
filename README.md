@@ -1,12 +1,12 @@
 # Homework 3 - *Coder Ticket*
 
-**Name of your app** is a Ruby on Rails blog application that allows users to create and buy tickets to cool events. 
+**Coder Ticket** is a Ruby on Rails blog application that allows users to create and buy tickets to cool events. 
 
 Submitted by: **Dung Phan**
 
 Time spent: **20+** hours
 
-URL: **Insert your Heroku URL here**
+URL: **https://glacial-forest-40352.herokuapp.com/**
 
 SimpleCov Test Coverage: **Insert percentage or link to report here**
 
