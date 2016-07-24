@@ -51,6 +51,9 @@
     -webkit-text-fill-color: rgb(85, 85, 85);
     -webkit-text-stroke-color: rgb(85, 85, 85);
   }
+  .button-hide{
+    display: none !important;
+  }
 }
 
 .events-list {
@@ -138,4 +141,7 @@
             }
         }
     }
+}
+.event-form{
+   margin-top: 50px;
 }

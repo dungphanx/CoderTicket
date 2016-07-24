@@ -1,0 +1,9 @@
+<div class="container" style="margin-top:70px;">
+	<h3>Log In</h3>
+
+	<%= form_tag sessions_path do %>
+		<%= text_field_tag :email %>
+		<%= password_field_tag :password %>
+		<%= submit_tag "Log In" %>
+	<% end %>	
+</div>

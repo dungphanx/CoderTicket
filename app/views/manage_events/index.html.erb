@@ -1,0 +1,26 @@
+<div class="container" style="margin-top: 70px">
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Category</th>
+				<th>Venue</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @events.each do |event| %>
+				<tr>
+					<td><%= event.name %></td>
+					<td><%= event.category.name %></td>
+					<td><%= event.venue.name %></td>
+					<td>
+						<%= link_to "Publish", user_update_path(current_user, event), class: 'btn btn-primary' %>
+						<%= link_to "Edit", edit_user_manage_event_path(current_user, event), class: 'btn btn-warning' %>
+						<%= link_to "Create Ticket", new_user_manage_event_manage_ticket_path(current_user, event), class: 'btn btn-secondary' %>
+					</td>
+				</tr>
+			<% end %>
+		</tbody>
+	</table>
+</div>
