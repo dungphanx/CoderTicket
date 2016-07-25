@@ -27,12 +27,16 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'bcrypt', '~> 3.1.7'
 
 gem 'bootstrap', '~> 4.0.0.alpha1'
+source 'https://rails-assets.org' do
+  gem 'rails-assets-tether', '>= 1.1.0'
+end
 gem 'simple_form'
 gem 'quiet_assets'
 gem 'better_errors', group: :development
 gem 'font-awesome-rails'
 gem 'font-kit-rails', '~> 1.2.0'
 gem 'bcrypt', '~> 3.1.7'
+gem 'rails_12factor', group: :production
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
