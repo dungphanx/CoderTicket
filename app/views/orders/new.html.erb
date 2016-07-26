@@ -28,6 +28,7 @@
       <thead>
         <tr>
           <th> Ticket Type </th>
+          <th> Remaining </th>
           <th> Unit Price </th>
           <th> Quantity </th>  
         </tr>
@@ -37,8 +38,12 @@
           <tr>
             <%= od.hidden_field :ticket_type_id, value: od.object.ticket_type.id %>
             <td> <%= od.label :name, od.object.ticket_type.name %> </td>
+            <td> <%= od.label :max_quantity, od.object.ticket_type.max_quantity %></td>
             <td> <%= od.label :price, number_to_currency(od.object.price, unit: 'VND ', precision: 0) %> </td>
-            <td> <%= od.text_field :quantity %></td> 
+            <td> 
+              <%= od.select :quantity, options_for_select(0..10) %>
+              <%= od.hidden_field :ticket_type_id %>
+            </td> 
           </tr>
         <% end %>
       </tbody>
