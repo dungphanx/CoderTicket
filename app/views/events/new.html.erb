@@ -28,16 +28,17 @@
 				<div class="col-xs-6">
 					<div class="form-group">
 						<%= f.label :starts_at, class: 'form-control-label' %>
-						<%= f.date_select :starts_at, class: 'form-control' %>
+						<%= f.datetime_select :starts_at, class: 'form-control' %>
 					</div>
 					<div class="form-group">
 						<%= f.label :ends_at, class: 'form-control-label' %>
-						<%= f.date_select :ends_at, class: 'form-control' %>
+						<%= f.datetime_select :ends_at, class: 'form-control' %>
 					</div>
 				</div>
 			</div>
-			<div class="form-group">
-				<%= f.text_area :extended_html_description, placeholder: "extended html description...", class: 'form-control' %>
+			<div class="form-group" data-no-turbolink>
+				<%= f.label :extended_html_description, class: 'form-control-label' %>
+				<%= f.cktext_area :extended_html_description, id: "extended_html_description", class: 'form-control' %>
 			</div>
 			<div class="form-group">
 				<%= f.label :hero_image_url, class: 'form-control-label' %>
@@ -47,3 +48,8 @@
 		<% end %>
 	</div>	
 </div>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$(".ckeditor").ckeditor();
+	})
+</script>
